@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags -->
+<title>EntApiCat — Enterprise API Catalogue Management Platform | API Governance for Banks</title>
+<meta name="description" content="EntApiCat is the only enterprise API catalogue platform purpose-built for large organisations and banks. Discover, classify, govern, and optimise your entire API estate — out of the box. Cut API duplication costs by up to 60%. Book a demo today.">
+<meta name="keywords" content="enterprise API catalogue, API management platform, API governance, bank API management, API catalogue software, API inventory management, API lifecycle management, enterprise API platform, API discovery tool, API classification, EAPI BAPI SAPI, MuleSoft alternative, API portfolio management">
+<meta name="author" content="EntApiCat">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://entapicat.ai">
+
+<!-- Open Graph / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://entapicat.ai">
+<meta property="og:title" content="EntApiCat — Enterprise API Catalogue Management Platform">
+<meta property="og:description" content="The only out-of-the-box API catalogue platform built for enterprise organisations and banks. Know every API you own. Know what it costs. Know who owns it.">
+<meta property="og:image" content="https://entapicat.ai/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EntApiCat — Enterprise API Catalogue Management">
+<meta name="twitter:description" content="Purpose-built enterprise API catalogue platform for banks and large organisations.">
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "EntApiCat",
+  "applicationCategory": "BusinessApplication",
+  "description": "Enterprise API catalogue management platform for banks and large organisations. Provides API discovery, classification, governance, and cost optimisation.",
+  "url": "https://entapicat.ai",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "EntApiCat Platform",
+      "description": "Out-of-the-box enterprise API catalogue platform"
+    },
+    {
+      "@type": "Offer",
+      "name": "EntApiCat Consulting",
+      "description": "Custom API catalogue consulting services"
+    }
+  ],
+  "provider": {
+    "@type": "Organization",
+    "name": "EntApiCat",
+    "url": "https://entapicat.ai"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink:    #06090f;
+  --ink2:   #111827;
+  --mid:    #374151;
+  --muted:  #6b7280;
+  --faint:  #9ca3af;
+  --rule:   #e5e7eb;
+  --bg:     #ffffff;
+  --bg2:    #f9fafb;
+  --bg3:    #f3f4f6;
+  --cat:    #ff6b2b;
+  --cat2:   #ff8f4c;
+  --cat3:   #fff0e8;
+  --blue:   #1d4ed8;
+  --blue2:  #dbeafe;
+  --teal:   #0d9488;
+  --teal2:  #ccfbf1;
+  --amber:  #d97706;
+  --amber2: #fef3c7;
+  --green:  #059669;
+  --green2: #d1fae5;
+  --red:    #dc2626;
+  --red2:   #fee2e2;
+  --disp:   'Syne', sans-serif;
+  --body:   'DM Sans', sans-serif;
+  --mono:   'DM Mono', monospace;
+  --r:      12px;
+  --r2:     20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--bg);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── TYPOGRAPHY ── */
+h1,h2,h3,h4,h5 { font-family: var(--disp); line-height: 1.15; }
+.display { font-size: clamp(42px, 6vw, 80px); font-weight: 800; letter-spacing: -0.03em; }
+.headline { font-size: clamp(28px, 3.5vw, 48px); font-weight: 700; letter-spacing: -0.025em; }
+.subhead  { font-size: clamp(18px, 2vw, 24px); font-weight: 500; }
+.mono     { font-family: var(--mono); }
+
+/* ── LAYOUT ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+.container-sm { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+section { position: relative; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 32px;
+  height: 68px; display: flex; align-items: center; gap: 40px;
+}
+.logo {
+  font-family: var(--disp); font-size: 22px; font-weight: 800;
+  color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 8px;
+}
+.logo-cat {
+  width: 34px; height: 34px; background: var(--cat);
+  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.logo span { color: var(--cat); }
+.nav-links {
+  display: flex; align-items: center; gap: 32px; margin-left: auto;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--mid);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  display: flex; align-items: center; gap: 12px; margin-left: 16px;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 22px; border-radius: 8px;
+  font-family: var(--body); font-size: 14px; font-weight: 500;
+  text-decoration: none; cursor: pointer; transition: all 0.2s;
+  border: none; white-space: nowrap;
+}
+.btn-ghost {
+  background: transparent; color: var(--mid);
+  border: 1px solid var(--rule);
+}
+.btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+.btn-primary {
+  background: var(--cat); color: #fff;
+  box-shadow: 0 2px 8px rgba(255,107,43,0.3);
+}
+.btn-primary:hover {
+  background: #e55a1e;
+  box-shadow: 0 4px 16px rgba(255,107,43,0.4);
+  transform: translateY(-1px);
+}
+.btn-dark {
+  background: var(--ink); color: #fff;
+}
+.btn-dark:hover { background: var(--ink2); transform: translateY(-1px); }
+.btn-lg { padding: 16px 32px; font-size: 16px; border-radius: 10px; }
+.btn-xl { padding: 18px 40px; font-size: 17px; border-radius: 12px; font-weight: 600; }
+
+/* ── HERO ── */
+.hero {
+  padding: 110px 0 0;
+  background: var(--bg);
+  overflow: hidden;
+  position: relative;
+}
+.hero-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding-bottom: 56px;
+}
+.hero-top-left {}
+.hero-top-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-dashboard {
+  margin-top: 0;
+  padding: 0 0 80px;
+}
+.hero h1 {
+  font-size: clamp(40px, 4.8vw, 72px);
+  font-weight: 800; letter-spacing: -0.035em;
+  line-height: 1.05; margin-bottom: 0;
+  color: var(--ink);
+}
+.hero h1 em { color: var(--cat); font-style: normal; }
+.hero-sub {
+  font-size: 17px; color: var(--mid); line-height: 1.75;
+  margin-bottom: 36px; font-weight: 300;
+}
+.hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.hero-stats {
+  display: flex; gap: 0; margin-top: 48px;
+  padding-top: 36px; border-top: 1px solid var(--rule);
+  align-items: flex-start;
+  grid-column: 1 / -1;
+}
+.hero-stat-item {
+  flex: 1;
+  padding-right: 40px;
+}
+.hero-stat-item + .hero-stat-item {
+  padding-left: 40px;
+  padding-right: 40px;
+  border-left: 1px solid var(--rule);
+}
+.hero-stat-item:last-child { padding-right: 0; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--cat3); border: 1px solid rgba(255,107,43,0.2);
+  border-radius: 100px; padding: 6px 16px;
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
+  color: var(--cat); margin-bottom: 24px;
+}
+.hero-eyebrow::before { content: '🐱'; font-size: 14px; }
+.hero h1 {
+  font-size: clamp(44px, 5.5vw, 76px);
+  font-weight: 800; letter-spacing: -0.035em;
+  line-height: 1.05; margin-bottom: 24px;
+  color: var(--ink);
+}
+.hero h1 em { color: var(--cat); font-style: normal; }
+.hero-sub {
+  font-size: 18px; color: var(--mid); line-height: 1.7;
+  margin-bottom: 40px; font-weight: 300;
+  max-width: 520px;
+}
+.hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.hero-stats {
+  display: flex; gap: 40px; margin-top: 56px;
+  padding-top: 40px; border-top: 1px solid var(--rule);
+  align-items: flex-start;
+}
+.hero-stat-val {
+  font-family: var(--disp); font-size: 36px; font-weight: 800;
+  color: var(--cat); line-height: 1; white-space: nowrap;
+}
+.hero-stat-lbl { font-size: 13px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+/* hero visual */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+.hero-visual svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06);
+}
+/* floating card styles removed */
+.card-header {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+}
+.card-icon {
+  width: 36px; height: 36px; border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.card-title { font-family: var(--disp); font-size: 14px; font-weight: 700; }
+.card-sub { font-size: 11px; color: var(--muted); }
+.api-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px; border-radius: 8px;
+  margin-bottom: 6px; border: 1px solid var(--rule);
+  font-size: 12px;
+}
+.api-row:last-child { margin-bottom: 0; }
+.api-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.api-name { font-family: var(--mono); font-size: 11px; flex: 1; }
+.api-pill {
+  font-family: var(--mono); font-size: 9px; font-weight: 600;
+  padding: 2px 7px; border-radius: 4px;
+}
+.pill-e { background: #dbeafe; color: #1d4ed8; }
+.pill-b { background: #f3e8ff; color: #7c3aed; }
+.pill-s { background: #d1fae5; color: #059669; }
+.api-owner { font-size: 10px; color: var(--muted); }
+.mini-stat {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 10px;
+}
+.mini-stat-val { font-family: var(--disp); font-size: 28px; font-weight: 800; }
+.mini-stat-lbl { font-size: 11px; color: var(--muted); }
+.save-bar {
+  background: var(--green2); border-radius: 8px; padding: 8px 12px;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; color: var(--green);
+  margin-top: 12px;
+}
+
+
+/* ── SECTION LABELS ── */
+.section-label {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--cat); margin-bottom: 20px;
+}
+.section-label::before { content: '//'; opacity: 0.5; }
+
+/* ── PROBLEM SECTION ── */
+.problem {
+  padding: 100px 0;
+  background: var(--ink);
+  color: #fff;
+}
+.problem-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+.problem h2 { color: #fff; margin-bottom: 24px; }
+.problem .section-label { color: #f97316; }
+.problem-lead {
+  font-size: 18px; color: rgba(255,255,255,0.7);
+  line-height: 1.75; font-weight: 300;
+}
+.problem-cards { display: flex; flex-direction: column; gap: 16px; }
+.prob-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px; padding: 24px;
+  transition: border-color 0.2s;
+}
+.prob-card:hover { border-color: rgba(255,107,43,0.4); }
+.prob-icon { font-size: 28px; margin-bottom: 12px; }
+.prob-title { font-family: var(--disp); font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.prob-body { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; }
+.prob-tag {
+  display: inline-block; margin-top: 12px;
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  padding: 3px 10px; border-radius: 100px;
+  background: rgba(255,107,43,0.15); color: #f97316;
+  border: 1px solid rgba(255,107,43,0.25);
+}
+
+/* ── PRODUCTS SECTION ── */
+.products { padding: 120px 0; }
+.products-intro { text-align: center; max-width: 640px; margin: 0 auto 80px; }
+.product-tabs {
+  display: flex; gap: 12px; justify-content: center; margin-bottom: 56px;
+}
+.ptab {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 24px; border-radius: 10px;
+  font-family: var(--disp); font-size: 15px; font-weight: 700;
+  cursor: pointer; transition: all 0.2s;
+  border: 2px solid var(--rule); color: var(--muted);
+  background: transparent;
+}
+.ptab.active {
+  border-color: var(--cat);
+  background: var(--cat3); color: var(--cat);
+}
+.ptab:hover:not(.active) { border-color: var(--ink2); color: var(--ink); }
+
+/* PRODUCT PANEL */
+.product-panel { display: none; }
+.product-panel.active { display: block; animation: fadeUp 0.3s ease; }
+@keyframes fadeUp { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: translateY(0); } }
+.product-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+.product-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--cat3); border: 1px solid rgba(255,107,43,0.2);
+  border-radius: 100px; padding: 5px 14px;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  color: var(--cat); margin-bottom: 20px;
+}
+.product-panel h2 { margin-bottom: 20px; }
+.product-desc {
+  font-size: 16px; color: var(--mid); line-height: 1.75;
+  margin-bottom: 32px; font-weight: 300;
+}
+.feature-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
+.feature-item {
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.feature-check {
+  width: 22px; height: 22px; border-radius: 6px;
+  background: var(--green2); color: var(--green);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; flex-shrink: 0; margin-top: 1px;
+}
+.feature-text { font-size: 14px; color: var(--mid); line-height: 1.5; }
+.feature-text strong { color: var(--ink); font-weight: 500; }
+
+/* capability cards */
+.cap-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.cap-card {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-radius: 14px; padding: 20px;
+  transition: all 0.2s;
+}
+.cap-card:hover {
+  border-color: var(--cat);
+  box-shadow: 0 4px 20px rgba(255,107,43,0.08);
+  transform: translateY(-2px);
+}
+.cap-icon { font-size: 22px; margin-bottom: 10px; }
+.cap-title { font-family: var(--disp); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.cap-body { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* consulting deliverables */
+.deliverable-list { display: flex; flex-direction: column; gap: 10px; }
+.deliverable {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: var(--bg2); border: 1px solid var(--rule);
+  border-radius: 12px; padding: 16px 18px;
+}
+.del-num {
+  width: 28px; height: 28px; border-radius: 7px;
+  background: var(--ink); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 12px; font-weight: 600;
+  flex-shrink: 0; margin-top: 1px;
+}
+.del-title { font-family: var(--disp); font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.del-body { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* ── FEATURES GRID ── */
+.features { padding: 100px 0; background: var(--bg2); }
+.features-intro { text-align: center; max-width: 580px; margin: 0 auto 72px; }
+.features-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.feat-card {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 16px; padding: 28px;
+  transition: all 0.25s;
+  position: relative; overflow: hidden;
+}
+.feat-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--cat);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s;
+}
+.feat-card:hover { border-color: rgba(255,107,43,0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.06); transform: translateY(-3px); }
+.feat-card:hover::before { transform: scaleX(1); }
+.feat-icon {
+  width: 44px; height: 44px; border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 16px;
+}
+.feat-title { font-family: var(--disp); font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.feat-body { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+/* ── COMPARISON TABLE ── */
+.compare { padding: 100px 0; }
+.compare-intro { text-align: center; max-width: 580px; margin: 0 auto 60px; }
+.compare-table { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 32px rgba(0,0,0,0.06); }
+.compare-table th {
+  padding: 16px 20px; font-family: var(--disp);
+  font-size: 14px; font-weight: 700; text-align: center;
+}
+.compare-table th:first-child { text-align: left; background: var(--bg2); }
+.compare-table td {
+  padding: 14px 20px; font-size: 14px;
+  border-top: 1px solid var(--rule); text-align: center;
+  color: var(--muted);
+}
+.compare-table td:first-child { text-align: left; color: var(--ink); font-weight: 500; }
+.compare-table tr:hover td { background: var(--bg2); }
+.th-highlight { background: var(--cat); color: #fff !important; }
+.td-highlight { background: rgba(255,107,43,0.03); }
+.td-highlight.check { color: var(--green) !important; font-weight: 700; font-size: 16px; }
+.check { color: var(--green); font-weight: 700; font-size: 16px; }
+.cross { color: var(--faint); font-size: 16px; }
+.partial { color: var(--amber); font-size: 12px; font-style: italic; }
+
+/* ── PRICING ── */
+.pricing { padding: 100px 0; background: var(--bg2); }
+.pricing-intro { text-align: center; max-width: 540px; margin: 0 auto 72px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.price-card {
+  background: #fff; border: 1px solid var(--rule);
+  border-radius: 20px; padding: 36px 32px;
+  position: relative; transition: all 0.25s;
+}
+.price-card:hover { box-shadow: 0 12px 48px rgba(0,0,0,0.08); transform: translateY(-4px); }
+.price-card.featured {
+  background: var(--ink); border-color: var(--ink);
+  color: #fff;
+}
+.featured-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--cat); color: #fff;
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  padding: 4px 16px; border-radius: 100px;
+}
+.price-tier { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--cat); margin-bottom: 8px; letter-spacing: 0.1em; text-transform: uppercase; }
+.price-card.featured .price-tier { color: var(--cat2); }
+.price-name { font-family: var(--disp); font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+.price-card.featured .price-name { color: #fff; }
+.price-desc { font-size: 13px; color: var(--muted); margin-bottom: 24px; line-height: 1.5; }
+.price-card.featured .price-desc { color: rgba(255,255,255,0.55); }
+.price-val {
+  font-family: var(--disp); font-size: 40px; font-weight: 800;
+  margin-bottom: 4px; line-height: 1;
+}
+.price-card.featured .price-val { color: #fff; }
+.price-period { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+.price-card.featured .price-period { color: rgba(255,255,255,0.45); }
+.price-divider { height: 1px; background: var(--rule); margin-bottom: 24px; }
+.price-card.featured .price-divider { background: rgba(255,255,255,0.1); }
+.price-features { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.pf-item {
+  display: flex; align-items: flex-start; gap: 10px; font-size: 13px;
+  color: var(--mid); line-height: 1.4;
+}
+.price-card.featured .pf-item { color: rgba(255,255,255,0.75); }
+.pf-check {
+  font-size: 13px; color: var(--green); flex-shrink: 0; margin-top: 1px;
+}
+.price-card.featured .pf-check { color: #6ee7b7; }
+.btn-price-featured {
+  background: var(--cat); color: #fff; width: 100%;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(255,107,43,0.35);
+}
+.btn-price-featured:hover { background: #e55a1e; }
+.btn-price-outline {
+  background: transparent; color: var(--ink);
+  border: 1.5px solid var(--rule); width: 100%;
+  justify-content: center;
+}
+.btn-price-outline:hover { border-color: var(--ink); }
+.consulting-note {
+  text-align: center; margin-top: 48px;
+  font-size: 14px; color: var(--muted);
+}
+.consulting-note a { color: var(--cat); text-decoration: none; font-weight: 500; }
+
+
+/* ── HOW IT WORKS ── */
+.how { padding: 100px 0; background: var(--bg2); }
+.how-intro { text-align: center; max-width: 540px; margin: 0 auto 72px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
+.steps::before {
+  content: '';
+  position: absolute; top: 44px; left: 10%; right: 10%; height: 2px;
+  background: linear-gradient(90deg, var(--cat), var(--blue));
+  z-index: 0;
+}
+.step { text-align: center; position: relative; z-index: 1; }
+.step-num {
+  width: 52px; height: 52px; border-radius: 14px;
+  background: #fff; border: 2px solid var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--disp); font-size: 20px; font-weight: 800;
+  color: var(--cat); margin: 0 auto 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  transition: all 0.2s;
+}
+.step:hover .step-num { background: var(--cat); color: #fff; border-color: var(--cat); transform: scale(1.1); }
+.step-title { font-family: var(--disp); font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.step-body { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+/* ── CTA BAND ── */
+.cta-band {
+  padding: 100px 0;
+  background: var(--cat);
+  position: relative; overflow: hidden;
+}
+.cta-band::before {
+  content: '🐱';
+  position: absolute; right: 8%; top: 50%; transform: translateY(-50%);
+  font-size: 180px; opacity: 0.12; pointer-events: none;
+}
+.cta-inner { text-align: center; position: relative; z-index: 1; }
+.cta-inner h2 { color: #fff; margin-bottom: 20px; }
+.cta-inner p { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 40px; font-weight: 300; }
+.cta-actions { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.btn-white { background: #fff; color: var(--cat); }
+.btn-white:hover { background: #fff8f5; transform: translateY(-1px); }
+.btn-outline-white {
+  background: transparent; color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+.btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+/* ── FAQ ── */
+.faq { padding: 100px 0; }
+.faq-intro { text-align: center; max-width: 540px; margin: 0 auto 64px; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.faq-item {
+  background: var(--bg2); border: 1px solid var(--rule);
+  border-radius: 14px; padding: 24px; cursor: pointer;
+  transition: all 0.2s;
+}
+.faq-item:hover { border-color: rgba(255,107,43,0.25); }
+.faq-item.open { border-color: var(--cat); }
+.faq-q {
+  font-family: var(--disp); font-size: 15px; font-weight: 700;
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+}
+.faq-toggle { color: var(--cat); font-size: 20px; flex-shrink: 0; margin-top: -2px; transition: transform 0.2s; }
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-a {
+  font-size: 14px; color: var(--muted); line-height: 1.7;
+  margin-top: 14px; display: none;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.6);
+  padding: 72px 0 40px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px; margin-bottom: 60px;
+}
+.footer-brand .logo { color: #fff; }
+.footer-tagline { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 12px; line-height: 1.65; max-width: 260px; }
+.footer-col h4 {
+  font-family: var(--disp); font-size: 13px; font-weight: 700;
+  color: #fff; margin-bottom: 20px; letter-spacing: 0.02em;
+}
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  font-size: 13px; color: rgba(255,255,255,0.45);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: #fff; }
+.footer-bottom {
+  padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; color: rgba(255,255,255,0.3);
+}
+.footer-bottom a { color: rgba(255,255,255,0.3); text-decoration: none; }
+.footer-badges { display: flex; gap: 12px; }
+.f-badge {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px; padding: 4px 10px;
+  font-family: var(--mono); font-size: 10px; color: rgba(255,255,255,0.35);
+}
+
+/* ── ANIMATIONS ── */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-top { grid-template-columns: 1fr; gap: 32px; }
+  .problem-grid, .product-layout { grid-template-columns: 1fr; }
+  .features-grid, .pricing-grid, .testi-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .steps::before { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .cap-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .compare-table { display: none; }
+}
+
+/* ── CONTACT MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(6,9,15,0.72);
+  backdrop-filter: blur(8px);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; animation: modalFadeIn 0.22s ease; }
+@keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+.modal-box {
+  background: #fff; border-radius: 20px;
+  width: 100%; max-width: 560px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.22);
+  overflow: hidden; position: relative;
+  animation: modalSlideUp 0.28s cubic-bezier(.22,.68,0,1.2);
+}
+@keyframes modalSlideUp { from { transform: translateY(32px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.modal-hdr {
+  padding: 28px 32px 20px;
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+}
+.modal-hdr-text h3 { font-family: var(--disp); font-size: 22px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.modal-hdr-text p { font-size: 14px; color: var(--muted); font-weight: 300; }
+.modal-close-btn {
+  width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+  border: 1px solid var(--rule); background: var(--bg2); color: var(--muted);
+  font-size: 18px; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.modal-close-btn:hover { border-color: var(--ink); color: var(--ink); }
+.modal-body { padding: 24px 32px 32px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-field { margin-bottom: 16px; }
+.form-field label {
+  display: block; font-size: 12px; font-weight: 600; color: var(--mid);
+  margin-bottom: 6px; letter-spacing: 0.02em;
+}
+.form-field input, .form-field select, .form-field textarea {
+  width: 100%; padding: 11px 14px;
+  border: 1.5px solid var(--rule); border-radius: 9px;
+  font-family: var(--body); font-size: 14px; color: var(--ink);
+  background: var(--bg2); outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  resize: none;
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+  border-color: var(--cat); background: #fff;
+  box-shadow: 0 0 0 3px rgba(255,107,43,0.1);
+}
+.form-field input::placeholder, .form-field textarea::placeholder { color: var(--faint); }
+.form-field select { appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239ca3af' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
+}
+.form-submit {
+  width: 100%; padding: 14px; border-radius: 10px;
+  background: var(--cat); border: none; color: #fff;
+  font-family: var(--body); font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; margin-top: 4px;
+  box-shadow: 0 4px 16px rgba(255,107,43,0.25);
+}
+.form-submit:hover { background: #e55a1e; box-shadow: 0 6px 24px rgba(255,107,43,0.35); transform: translateY(-1px); }
+.form-submit:disabled { background: var(--faint); box-shadow: none; transform: none; cursor: not-allowed; }
+.form-note { font-size: 12px; color: var(--faint); text-align: center; margin-top: 12px; }
+/* Thank you state */
+.modal-thankyou {
+  display: none; padding: 56px 32px;
+  text-align: center;
+}
+.modal-thankyou.visible { display: block; animation: modalFadeIn 0.3s ease; }
+.ty-icon { font-size: 56px; margin-bottom: 16px; }
+.ty-title { font-family: var(--disp); font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
+.ty-body { font-size: 15px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 28px; }
+/* spinner */
+.spinner {
+  display: inline-block; width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff; border-radius: 50%;
+  animation: spin 0.7s linear infinite; vertical-align: middle; margin-right: 6px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="logo">
+      <div class="logo-cat">🐱</div>
+      Ent<span>Api</span>Cat
+    </a>
+    <ul class="nav-links">
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#consulting">Consulting</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#demo" class="btn btn-ghost" onclick="event.preventDefault();openModal('Log in / Access')">Log in</a>
+      <button class="btn btn-primary" onclick="openModal('Book a Demo')">Book a Demo →</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-top">
+      <!-- Left: headline -->
+      <div class="hero-top-left">
+        <div class="hero-eyebrow">The Enterprise API Catalogue Platform</div>
+        <h1>Finally know <em>every</em> API you own.</h1>
+      </div>
+      <!-- Right: description + CTAs -->
+      <div class="hero-top-right">
+        <p class="hero-sub">EntApiCat is the only out-of-the-box platform that gives banks and large enterprises complete visibility, governance, and intelligence across their entire API estate — in weeks, not years.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-xl" onclick="openModal('Book a Free Demo')">Book a Free Demo →</button>
+          <a href="#platform" class="btn btn-ghost btn-lg">See the Platform</a>
+        </div>
+      </div>
+      <!-- Stats: span full width -->
+      <div class="hero-stats">
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">60%</div>
+          <div class="hero-stat-lbl">average reduction in API duplication costs</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">12 wks</div>
+          <div class="hero-stat-lbl">from deployment to full catalogue visibility</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">1,000+</div>
+          <div class="hero-stat-lbl">APIs catalogued per enterprise deployment</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">$1.2M</div>
+          <div class="hero-stat-lbl">average annual savings identified per client</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dashboard image: full container width, no side padding constraint -->
+  <div class="hero-dashboard">
+    <div class="container">
+      <div class="hero-visual">
+        <div style="font-family:'DM Sans',system-ui,sans-serif;box-sizing:border-box">
+<style>
+.eac-db *{box-sizing:border-box;margin:0;padding:0}
+.eac-db{display:flex;height:580px;border-radius:16px;overflow:hidden;background:#fff;border:1px solid #e2e8f0;box-shadow:0 32px 80px rgba(0,0,0,0.10),0 4px 16px rgba(0,0,0,0.06)}
+.eac-sb{width:160px;flex-shrink:0;background:#0c0f1d;display:flex;flex-direction:column}
+.eac-sb-logo{display:flex;align-items:center;gap:8px;padding:18px 16px 14px}
+.eac-sb-logo-icon{width:30px;height:30px;border-radius:8px;background:#ff6b2b;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.eac-sb-logo-text{color:#fff;font-size:13px;font-weight:700;letter-spacing:-0.01em}
+.eac-sb-logo-text span{color:#ff6b2b}
+.eac-sb-section{padding:8px 14px 3px;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-top:6px}
+.eac-sb-item{display:flex;align-items:center;gap:9px;padding:8px 14px;margin:1px 8px;border-radius:8px;font-size:11px;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif}
+.eac-sb-item.active{background:rgba(255,107,43,0.16);color:#ff8c52;font-weight:600}
+.eac-sb-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;opacity:0.7}
+.eac-sb-bottom{margin-top:auto;padding:14px 16px;border-top:1px solid rgba(255,255,255,0.07)}
+.eac-sb-stat-lbl{font-size:9px;color:rgba(255,255,255,0.28);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px}
+.eac-sb-stat-val{font-size:28px;font-weight:800;color:#ff6b2b;line-height:1;font-family:'Syne',system-ui,sans-serif}
+.eac-sb-stat-sub{font-size:9px;color:rgba(255,255,255,0.22);margin-top:3px}
+.eac-main{flex:1;display:flex;flex-direction:column;overflow:hidden;background:#f7f8fb;min-width:0}
+.eac-topbar{display:flex;align-items:center;gap:10px;padding:12px 18px;background:#fff;border-bottom:1px solid #eef0f5;flex-shrink:0}
+.eac-title{font-size:16px;font-weight:800;color:#0c0f1d;font-family:'Syne',system-ui,sans-serif;flex:1;white-space:nowrap}
+.eac-chips{display:flex;gap:5px;flex-shrink:0}
+.eac-chip{padding:4px 10px;border-radius:20px;font-size:9px;font-weight:700;color:#fff;white-space:nowrap}
+.eac-search{display:flex;align-items:center;gap:7px;background:#f4f5f9;border-radius:8px;padding:6px 11px;width:210px;flex-shrink:0}
+.eac-search-icon{font-size:12px;color:#9ca3af}
+.eac-search-text{font-size:11px;color:#9ca3af}
+.eac-filter{padding:6px 12px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;font-size:11px;color:#6b7280;white-space:nowrap;flex-shrink:0}
+.eac-avatar{width:30px;height:30px;border-radius:50%;background:#ff6b2b;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0}
+.eac-content{flex:1;overflow-y:auto;padding:14px 18px;display:flex;flex-direction:column;gap:12px}
+.eac-kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.eac-kpi{background:#fff;border-radius:10px;padding:12px 14px;border:1px solid #eef0f5}
+.eac-kpi-lbl{font-size:9px;color:#9ca3af;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.06em}
+.eac-kpi-val{font-size:20px;font-weight:800;line-height:1;margin-bottom:4px;font-family:'Syne',system-ui,sans-serif}
+.eac-kpi-badge{display:inline-block;font-size:9px;padding:2px 7px;border-radius:4px;font-weight:600}
+.eac-mid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.eac-panel{background:#fff;border-radius:12px;border:1px solid #eef0f5;overflow:hidden}
+.eac-ph{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:1px solid #f5f6fa}
+.eac-ph-title{font-size:11px;font-weight:700;color:#0c0f1d}
+.eac-ph-link{font-size:10px;color:#ff6b2b;cursor:pointer}
+.eac-api-row{display:flex;align-items:center;gap:9px;padding:8px 14px;border-bottom:1px solid #f8f9fc}
+.eac-api-row:last-child{border-bottom:none}
+.eac-api-icon{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.eac-api-name{font-size:11px;font-weight:600;color:#0c0f1d;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eac-api-sub{font-size:9px;color:#9ca3af;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eac-pill{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap;flex-shrink:0}
+.eac-domains{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px}
+.eac-dcard{border-radius:10px;padding:12px;border:1.5px solid transparent}
+.eac-dicon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:8px}
+.eac-dname{font-size:13px;font-weight:800;margin-bottom:2px;font-family:'Syne',system-ui,sans-serif;white-space:nowrap}
+.eac-dmeta{font-size:9px;margin-bottom:2px;white-space:nowrap}
+.eac-downer{font-size:9px;color:#9ca3af;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eac-darrow{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;font-size:10px;font-weight:700;color:#fff;margin-top:6px}
+.eac-save{background:#0c0f1d;border-radius:10px;padding:13px 16px;display:flex;align-items:center;gap:16px;flex-shrink:0}
+.eac-save-val{font-size:20px;font-weight:800;color:#ff6b2b;font-family:'Syne',system-ui,sans-serif;line-height:1}
+.eac-save-lbl{font-size:9px;color:rgba(255,255,255,0.35);margin-bottom:4px}
+.eac-save-sub{font-size:9px;color:rgba(255,255,255,0.25);margin-top:2px}
+.eac-save-stats{margin-left:auto;display:flex;gap:20px;flex-shrink:0}
+.eac-save-stat{text-align:center}
+.eac-save-stat-val{font-size:14px;font-weight:700;color:#ff8c52;font-family:'Syne',sans-serif}
+.eac-save-stat-lbl{font-size:9px;color:rgba(255,255,255,0.3)}
+</style>
+<div class="eac-db">
+  <div class="eac-sb">
+    <div class="eac-sb-logo">
+      <div class="eac-sb-logo-icon">🐱</div>
+      <div class="eac-sb-logo-text">Ent<span>Api</span>Cat</div>
+    </div>
+    <div class="eac-sb-section">Main</div>
+    <div class="eac-sb-item active"><span class="eac-sb-dot"></span>Home</div>
+    <div class="eac-sb-item"><span class="eac-sb-dot"></span>APIs</div>
+    <div class="eac-sb-item"><span class="eac-sb-dot"></span>Business Units</div>
+    <div class="eac-sb-section">Insights</div>
+    <div class="eac-sb-item"><span class="eac-sb-dot"></span>Analyse</div>
+    <div class="eac-sb-item"><span class="eac-sb-dot"></span>Analytics</div>
+    <div class="eac-sb-item"><span class="eac-sb-dot"></span>Cost Report</div>
+    <div class="eac-sb-section">Admin</div>
+    <div class="eac-sb-item"><span class="eac-sb-dot"></span>Governance</div>
+    <div class="eac-sb-item"><span class="eac-sb-dot"></span>Classify</div>
+    <div class="eac-sb-bottom">
+      <div class="eac-sb-stat-lbl">Total APIs</div>
+      <div class="eac-sb-stat-val">847</div>
+      <div class="eac-sb-stat-sub">across 10 business units</div>
+    </div>
+  </div>
+  <div class="eac-main">
+    <div class="eac-topbar">
+      <div class="eac-title">API Catalogue</div>
+      <div class="eac-chips">
+        <div class="eac-chip" style="background:#1d4ed8">🏦 Banking</div>
+        <div class="eac-chip" style="background:#059669">🛒 Insurance</div>
+        <div class="eac-chip" style="background:#7c3aed">💼 Wealth</div>
+        <div class="eac-chip" style="background:#0891b2">📊 Analytics</div>
+        <div class="eac-chip" style="background:#ea580c">⚙️ Ops</div>
+      </div>
+      <div class="eac-search"><div class="eac-search-icon">⌕</div><div class="eac-search-text">Search APIs, domains…</div></div>
+      <div class="eac-filter">⊟ Filters</div>
+      <div class="eac-avatar">SC</div>
+    </div>
+    <div class="eac-content">
+      <div class="eac-kpi-row">
+        <div class="eac-kpi">
+          <div class="eac-kpi-lbl">Total APIs</div>
+          <div class="eac-kpi-val" style="color:#1d4ed8">847</div>
+          <div class="eac-kpi-badge" style="background:#eff6ff;color:#1d4ed8">+12 this week</div>
+        </div>
+        <div class="eac-kpi">
+          <div class="eac-kpi-lbl">Approved</div>
+          <div class="eac-kpi-val" style="color:#15803d">631</div>
+          <div class="eac-kpi-badge" style="background:#f0fdf4;color:#15803d">74.5% covered</div>
+        </div>
+        <div class="eac-kpi">
+          <div class="eac-kpi-lbl">Orphan APIs</div>
+          <div class="eac-kpi-val" style="color:#ea580c">48</div>
+          <div class="eac-kpi-badge" style="background:#fff7ed;color:#c2410c">⚠ action needed</div>
+        </div>
+        <div class="eac-kpi">
+          <div class="eac-kpi-lbl">Consumers</div>
+          <div class="eac-kpi-val" style="color:#7c3aed">312</div>
+          <div class="eac-kpi-badge" style="background:#faf5ff;color:#7c3aed">active subscribers</div>
+        </div>
+        <div class="eac-kpi" style="background:#0c0f1d">
+          <div class="eac-kpi-lbl" style="color:rgba(255,255,255,0.35)">Savings Found</div>
+          <div class="eac-kpi-val" style="color:#ff6b2b">$1.2M</div>
+          <div class="eac-kpi-badge" style="background:rgba(255,107,43,0.15);color:#ff8c52">annually</div>
+        </div>
+      </div>
+      <div class="eac-mid">
+        <div class="eac-panel">
+          <div class="eac-ph"><div class="eac-ph-title">Featured APIs</div><div class="eac-ph-link">View all →</div></div>
+          <div class="eac-api-row">
+            <div class="eac-api-icon" style="background:#eff6ff">🏦</div>
+            <div style="flex:1;min-width:0"><div class="eac-api-name">Fund Transfer API</div><div class="eac-api-sub">Retail Banking · Mark Davies</div></div>
+            <div class="eac-pill" style="background:#faf5ff;color:#7c3aed;margin-right:4px">BAPI</div>
+            <div class="eac-pill" style="background:#f0fdf4;color:#15803d">✓ Live</div>
+          </div>
+          <div class="eac-api-row">
+            <div class="eac-api-icon" style="background:#fff7ed">🔐</div>
+            <div style="flex:1;min-width:0"><div class="eac-api-name">OAuth Token API</div><div class="eac-api-sub">Identity & Access · Anjali Mehta</div></div>
+            <div class="eac-pill" style="background:#f0fdf4;color:#15803d;margin-right:4px">EAPI</div>
+            <div class="eac-pill" style="background:#f0fdf4;color:#15803d">✓ Live</div>
+          </div>
+          <div class="eac-api-row">
+            <div class="eac-api-icon" style="background:#faf5ff">🔍</div>
+            <div style="flex:1;min-width:0"><div class="eac-api-name">Fraud Score API</div><div class="eac-api-sub">Risk · Unassigned</div></div>
+            <div class="eac-pill" style="background:#f0fdfa;color:#0f766e;margin-right:4px">SAPI</div>
+            <div class="eac-pill" style="background:#fef2f2;color:#dc2626">⚠ Orphan</div>
+          </div>
+          <div class="eac-api-row">
+            <div class="eac-api-icon" style="background:#f0fdf4">💳</div>
+            <div style="flex:1;min-width:0"><div class="eac-api-name">Payment Gateway API</div><div class="eac-api-sub">Payments · Priya Nair</div></div>
+            <div class="eac-pill" style="background:#faf5ff;color:#7c3aed;margin-right:4px">BAPI</div>
+            <div class="eac-pill" style="background:#f0fdf4;color:#15803d">✓ Live</div>
+          </div>
+          <div class="eac-api-row">
+            <div class="eac-api-icon" style="background:#fef2f2">📊</div>
+            <div style="flex:1;min-width:0"><div class="eac-api-name">AML Screening API</div><div class="eac-api-sub">Operations · Natalia Kovač</div></div>
+            <div class="eac-pill" style="background:#f0fdfa;color:#0f766e;margin-right:4px">SAPI</div>
+            <div class="eac-pill" style="background:#f0fdf4;color:#15803d">✓ Live</div>
+          </div>
+        </div>
+        <div class="eac-panel" style="background:#f7f8fb">
+          <div class="eac-ph" style="background:#f7f8fb"><div class="eac-ph-title">Business Domains</div><div class="eac-ph-link">View all →</div></div>
+          <div class="eac-domains">
+            <div class="eac-dcard" style="background:#eff6ff;border-color:#bfdbfe">
+              <div class="eac-dicon" style="background:#1d4ed8">🏦</div>
+              <div class="eac-dname" style="color:#1e40af">Banking</div>
+              <div class="eac-dmeta" style="color:#3b82f6">218 APIs · 8 sub-units</div>
+              <div class="eac-downer">Sarah Chen</div>
+              <div class="eac-darrow" style="background:#1d4ed8">→</div>
+            </div>
+            <div class="eac-dcard" style="background:#f0fdf4;border-color:#86efac">
+              <div class="eac-dicon" style="background:#15803d">💳</div>
+              <div class="eac-dname" style="color:#166534">Payments</div>
+              <div class="eac-dmeta" style="color:#16a34a">164 APIs · 5 sub-units</div>
+              <div class="eac-downer">Mark Davies</div>
+              <div class="eac-darrow" style="background:#15803d">→</div>
+            </div>
+            <div class="eac-dcard" style="background:#fff7ed;border-color:#fed7aa">
+              <div class="eac-dicon" style="background:#ea580c">🛡️</div>
+              <div class="eac-dname" style="color:#9a3412">Risk</div>
+              <div class="eac-dmeta" style="color:#ea580c">128 APIs · 6 sub-units</div>
+              <div class="eac-downer">Natalia Kovač</div>
+              <div class="eac-darrow" style="background:#ea580c">→</div>
+            </div>
+            <div class="eac-dcard" style="background:#faf5ff;border-color:#d8b4fe">
+              <div class="eac-dicon" style="background:#7c3aed">🔐</div>
+              <div class="eac-dname" style="color:#5b21b6">Identity</div>
+              <div class="eac-dmeta" style="color:#7c3aed">97 APIs · 4 sub-units</div>
+              <div class="eac-downer">Anjali Mehta</div>
+              <div class="eac-darrow" style="background:#7c3aed">→</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="eac-save">
+        <div>
+          <div class="eac-save-lbl">💡 Annual savings from API consolidation</div>
+          <div class="eac-save-val">$1.2M / year</div>
+          <div class="eac-save-sub">48 duplicate APIs across 6 business units</div>
+        </div>
+        <div class="eac-save-stats">
+          <div class="eac-save-stat"><div class="eac-save-stat-val">48</div><div class="eac-save-stat-lbl">Orphans</div></div>
+          <div class="eac-save-stat"><div class="eac-save-stat-val">5.7%</div><div class="eac-save-stat-lbl">Redundancy</div></div>
+          <div class="eac-save-stat"><div class="eac-save-stat-val">6 / 10</div><div class="eac-save-stat-lbl">BUs affected</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div class="reveal">
+        <div class="section-label">The Problem</div>
+        <h2 class="headline">Your APIs are running the business. But nobody knows which ones, what they do, or what they cost.</h2>
+        <p class="problem-lead" style="margin-top:24px">The average enterprise bank operates over 800 production APIs. Ask your CTO to name them all, their owners, their cost, and their consumers. You'll get a pause — and a spreadsheet from 2022.</p>
+        <p class="problem-lead" style="margin-top:16px">API gateways manage traffic. Dev portals publish docs. Neither gives you intelligence. EntApiCat does.</p>
+      </div>
+      <div class="problem-cards reveal">
+        <div class="prob-card">
+          <div class="prob-icon">🏚️</div>
+          <div class="prob-title">The Ownership Vacuum</div>
+          <div class="prob-body">Reorgs happen. Teams disband. APIs stay running — consuming budget, carrying security risk — with nobody accountable. Orphan APIs are universal in any portfolio over 200 APIs.</div>
+          <span class="prob-tag">Governance Risk</span>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon">♻️</div>
+          <div class="prob-title">The Duplication Epidemic</div>
+          <div class="prob-body">Without a shared view, each BU builds the same notification, KYC, and fraud APIs independently. The same capability gets built — and paid for — 3 to 5 times across the enterprise.</div>
+          <span class="prob-tag">Wasted Spend</span>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon">💸</div>
+          <div class="prob-title">The Cost Blindspot</div>
+          <div class="prob-body">Cloud costs are attributed at project level, never API level. Finance teams cannot answer "what does our API programme cost?" The case for rationalisation cannot be made without data.</div>
+          <span class="prob-tag">Financial Opacity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="platform">
+  <div class="container">
+    <div class="products-intro reveal">
+      <div class="section-label">What We Offer</div>
+      <h2 class="headline">One product. One practice.</h2>
+      <p style="font-size:16px; color:var(--muted); margin-top:16px; font-weight:300">Choose the out-of-the-box SaaS platform, engage our consulting practice to build a custom solution, or combine both.</p>
+    </div>
+    <div class="product-tabs">
+      <button class="ptab active" onclick="switchProduct('platform', this)">🚀 EntApiCat Platform</button>
+      <button class="ptab" onclick="switchProduct('consulting', this)">🤝 Consulting Services</button>
+    </div>
+
+    <!-- PLATFORM PANEL -->
+    <div class="product-panel active" id="panel-platform">
+      <div class="product-layout">
+        <div class="reveal">
+          <div class="product-badge">Out-of-the-box SaaS</div>
+          <h2 class="headline">Enterprise API intelligence, deployed in 12 weeks.</h2>
+          <p class="product-desc">EntApiCat Platform is a fully managed SaaS product that connects to your existing API gateways, CI/CD pipelines, and cloud billing to build and maintain a living, self-updating API catalogue — without a multi-year build programme.</p>
+          <div class="feature-list">
+            <div class="feature-item"><div class="feature-check">✓</div><div class="feature-text"><strong>Automatic sync</strong> with Apigee, Kong, AWS API Gateway, MuleSoft — no manual entry</div></div>
+            <div class="feature-item"><div class="feature-check">✓</div><div class="feature-text"><strong>Business unit ownership</strong> model with hierarchical BU → Sub-unit → API mapping</div></div>
+            <div class="feature-item"><div class="feature-check">✓</div><div class="feature-text"><strong>AI-powered redundancy analysis</strong> that quantifies duplication cost and recommends consolidation</div></div>
+            <div class="feature-item"><div class="feature-check">✓</div><div class="feature-text"><strong>SLA / SLO / SLI dashboards</strong> per API with consumer and dependency graphs</div></div>
+            <div class="feature-item"><div class="feature-check">✓</div><div class="feature-text"><strong>Cost attribution</strong> to individual APIs from AWS, Azure, and GCP billing APIs</div></div>
+            <div class="feature-item"><div class="feature-check">✓</div><div class="feature-text"><strong>Orphan detection</strong> — APIs in the gateway with no owner are flagged automatically</div></div>
+          </div>
+          <button class="btn btn-primary btn-lg" onclick="openModal('Book a Platform Demo')">Book a Platform Demo →</button>
+        </div>
+        <div class="cap-grid reveal">
+          <div class="cap-card"><div class="cap-icon">⊞</div><div class="cap-title">Business View</div><div class="cap-body">Drill from enterprise → BU → Sub-unit → API with owner, cost, and consumer data at each level.</div></div>
+          <div class="cap-card"><div class="cap-icon">🔍</div><div class="cap-title">Functional View</div><div class="cap-body">Group APIs by functional domain — payments, identity, risk — to see capability across the estate.</div></div>
+          <div class="cap-card"><div class="cap-icon">◈</div><div class="cap-title">Redundancy AI</div><div class="cap-body">Machine-detected functional duplicates with estimated monthly savings per consolidation opportunity.</div></div>
+          <div class="cap-card"><div class="cap-icon">🏷️</div><div class="cap-title">Classification Manager</div><div class="cap-body">Drag-and-drop interface for classifying orphan APIs into BUs with approval workflows.</div></div>
+          <div class="cap-card"><div class="cap-icon">📊</div><div class="cap-title">SLA Intelligence</div><div class="cap-body">SLA commitment, SLO target, and live SLI for every API — in a single consistent view.</div></div>
+          <div class="cap-card"><div class="cap-icon">🔗</div><div class="cap-title">Dependency Graph</div><div class="cap-body">Full downstream API dependency map for change impact assessment and deprecation planning.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONSULTING PANEL -->
+    <div class="product-panel" id="panel-consulting">
+      <div class="product-layout" id="consulting">
+        <div class="reveal">
+          <div class="product-badge">Consulting Services</div>
+          <h2 class="headline">Build the right solution for your architecture.</h2>
+          <p class="product-desc">Some enterprises need a custom solution — integrated with proprietary systems, built on your internal cloud, or tailored to specific regulatory requirements. Our consulting practice delivers API catalogue strategy and implementation for complex enterprise environments.</p>
+          <div class="feature-list">
+            <div class="feature-item"><div class="feature-check">✓</div><div class="feature-text"><strong>BFSI-specialist team</strong> — architects who have built API programmes inside Tier 1 banks</div></div>
+            <div class="feature-item"><div class="feature-check">✓</div><div class="feature-text"><strong>Gateway-agnostic</strong> — we work with your existing infrastructure, not against it</div></div>
+            <div class="feature-item"><div class="feature-check">✓</div><div class="feature-text"><strong>Regulatory alignment</strong> — PSD2, Basel IV, DORA, FCA Open Banking compliant design</div></div>
+            <div class="feature-item"><div class="feature-check">✓</div><div class="feature-text"><strong>Knowledge transfer</strong> — your team owns the solution at the end of engagement</div></div>
+            <div class="feature-item"><div class="feature-check">✓</div><div class="feature-text"><strong>Governance framework</strong> — people, process, and tooling for sustainable catalogue hygiene</div></div>
+          </div>
+          <button class="btn btn-dark btn-lg" onclick="openModal('Talk to a Consultant')">Talk to a Consultant →</button>
+        </div>
+        <div class="deliverable-list reveal">
+          <div class="deliverable">
+            <div class="del-num">01</div>
+            <div><div class="del-title">API Estate Discovery & Assessment</div><div class="del-body">Full inventory of all APIs across gateways, environments, and business units. Ownership gap analysis and cost baseline.</div></div>
+          </div>
+          <div class="deliverable">
+            <div class="del-num">02</div>
+            <div><div class="del-title">Classification Taxonomy Design</div><div class="del-body">EAPI/BAPI/SAPI framework, audience model, functional domain taxonomy — tailored to your organisational structure.</div></div>
+          </div>
+          <div class="deliverable">
+            <div class="del-num">03</div>
+            <div><div class="del-title">Catalogue Platform Architecture</div><div class="del-body">Reference architecture for your custom catalogue solution including gateway integration, CI/CD hooks, and metadata store design.</div></div>
+          </div>
+          <div class="deliverable">
+            <div class="del-num">04</div>
+            <div><div class="del-title">Governance Operating Model</div><div class="del-body">Roles, responsibilities, workflows, and KPIs for the API Product Owner function across all business units.</div></div>
+          </div>
+          <div class="deliverable">
+            <div class="del-num">05</div>
+            <div><div class="del-title">Rationalisation Roadmap</div><div class="del-body">Prioritised consolidation plan with financial modelling of savings potential from duplicate API elimination.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-intro reveal">
+      <div class="section-label">Platform Features</div>
+      <h2 class="headline">Every dimension of your API estate, in one place.</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#dbeafe">🏢</div>
+        <div class="feat-title">Multi-BU Ownership Hierarchy</div>
+        <div class="feat-body">Map every API to a business unit, sub-unit, and named owner. Drill from enterprise level to individual API in three clicks.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#d1fae5">⚡</div>
+        <div class="feat-title">Real-Time Gateway Sync</div>
+        <div class="feat-body">Webhook integration with Apigee, Kong, MuleSoft, and AWS API Gateway keeps your catalogue in sync with every deployment, automatically.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#fef3c7">🏷️</div>
+        <div class="feat-title">Multi-Dimensional Classification</div>
+        <div class="feat-body">Classify every API by tier (EAPI/BAPI/SAPI), audience (private/partner/public), protocol, invocation pattern, and industry vertical.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#f3e8ff">💸</div>
+        <div class="feat-title">API Cost Attribution</div>
+        <div class="feat-body">Pull cloud billing data from AWS, Azure, and GCP and attribute infrastructure costs at the API level. Make the ROI case for consolidation with real numbers.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#fce7f3">🔗</div>
+        <div class="feat-title">Consumer & Dependency Mapping</div>
+        <div class="feat-body">Visual graph of every API's consumers and downstream dependencies. Instant change impact assessment. Safe deprecation planning.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#ccfbf1">📊</div>
+        <div class="feat-title">SLA / SLO / SLI Dashboard</div>
+        <div class="feat-body">Contractual SLA, internal SLO target, and live SLI per API — P99, P95, TPS, uptime, MTTR — in a single consistent view for every API in the estate.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#fee2e2">👻</div>
+        <div class="feat-title">Orphan API Detection</div>
+        <div class="feat-body">APIs active in the gateway with no declared owner are automatically flagged. Drag-and-drop classification manager to remediate and assign ownership.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#fff0e8">🌍</div>
+        <div class="feat-title">Multi-Environment Support</div>
+        <div class="feat-body">Switch between DEV, SIT, UAT, and PROD views. Surface version drift between environments. Track API promotion through the lifecycle.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon" style="background:#e0f2fe">🔒</div>
+        <div class="feat-title">Enterprise-Grade Security</div>
+        <div class="feat-body">SSO via SAML 2.0 and OIDC, RBAC down to sub-unit level, full audit log, and data residency options for regulated industries including banking and insurance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare" id="compare">
+  <div class="container">
+    <div class="compare-intro reveal">
+      <div class="section-label">How We Compare</div>
+      <h2 class="headline">Built for intelligence. Not just operations.</h2>
+      <p style="font-size:15px; color:var(--muted); margin-top:16px; font-weight:300">Every tool in your stack solves a different problem. EntApiCat is the only one that answers the question your CEO is asking.</p>
+    </div>
+    <table class="compare-table reveal">
+      <thead>
+        <tr>
+          <th style="width:28%">Capability</th>
+          <th>API Gateway</th>
+          <th>Dev Portal</th>
+          <th>Service Mesh</th>
+          <th class="th-highlight">EntApiCat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Business unit ownership view</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="td-highlight check">✓</td></tr>
+        <tr><td>Functional duplicate detection</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="td-highlight check">✓</td></tr>
+        <tr><td>API cost attribution</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="td-highlight check">✓</td></tr>
+        <tr><td>Cross-BU consumer mapping</td><td class="cross">✗</td><td class="partial">Partial</td><td class="cross">✗</td><td class="td-highlight check">✓</td></tr>
+        <tr><td>EAPI / BAPI / SAPI classification</td><td class="cross">✗</td><td class="partial">Manual</td><td class="cross">✗</td><td class="td-highlight check">✓</td></tr>
+        <tr><td>Orphan API detection</td><td class="cross">✗</td><td class="cross">✗</td><td class="cross">✗</td><td class="td-highlight check">✓</td></tr>
+        <tr><td>SLA/SLO/SLI aligned view</td><td class="partial">Partial</td><td class="cross">✗</td><td class="partial">Partial</td><td class="td-highlight check">✓</td></tr>
+        <tr><td>Downstream dependency graph</td><td class="cross">✗</td><td class="cross">✗</td><td class="partial">Partial</td><td class="td-highlight check">✓</td></tr>
+        <tr><td>Runtime traffic management</td><td class="check">✓</td><td class="cross">✗</td><td class="check">✓</td><td class="td-highlight cross">✗</td></tr>
+        <tr><td>Developer onboarding / self-service</td><td class="cross">✗</td><td class="check">✓</td><td class="cross">✗</td><td class="td-highlight partial">Partial</td></tr>
+      </tbody>
+    </table>
+    <p style="text-align:center; font-size:13px; color:var(--faint); margin-top:16px">EntApiCat complements your gateway and portal — it doesn't replace them.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="how-intro reveal">
+      <div class="section-label">How It Works</div>
+      <h2 class="headline">From zero visibility to full intelligence in 12 weeks.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div class="step-title">Connect your gateways</div>
+        <div class="step-body">Plug in Apigee, Kong, MuleSoft, or AWS API Gateway via our pre-built connectors. EntApiCat imports your live API inventory automatically.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <div class="step-title">Map your organisation</div>
+        <div class="step-body">Define your BU hierarchy and assign initial ownership. Our AI suggests classifications based on API names, specs, and traffic patterns.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <div class="step-title">Classify & govern</div>
+        <div class="step-body">Apply EAPI/BAPI/SAPI taxonomy, audience, protocol, and domain tags. Orphan APIs are surfaced for remediation. Governance workflows enforce quality.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <div class="step-title">Analyse & optimise</div>
+        <div class="step-body">Run the redundancy analyser. Generate the cost savings report. Present the rationalisation roadmap to your leadership team — with real numbers.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-intro reveal">
+      <div class="section-label">Pricing</div>
+      <h2 class="headline">Priced for the complexity it solves.</h2>
+      <p style="font-size:15px; color:var(--muted); margin-top:16px; font-weight:300">EntApiCat eliminates millions in duplicated API infrastructure. Our pricing reflects that value. All plans include unlimited APIs, unlimited users, and dedicated onboarding. No per-seat pricing. No surprise overages.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-tier">Entry</div>
+        <div class="price-name">Foundation</div>
+        <div class="price-desc">For organisations with up to 500 APIs beginning their enterprise catalogue programme.</div>
+        <div class="price-period" style="margin-top:4px;margin-bottom:4px">Annual contract · tailored to your estate</div>
+        <div class="price-divider"></div>
+        <div class="price-features">
+          <div class="pf-item"><div class="pf-check">✓</div>Up to 500 APIs</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Up to 4 gateway integrations</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Business unit ownership hierarchy</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Full API classification (EAPI/BAPI/SAPI)</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Orphan API detection &amp; classification</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Multi-environment views (DEV→PROD)</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Named CSM · 4h support SLA</div>
+        </div>
+        <button class="btn btn-price-outline" onclick="openModal('Get Started — Foundation')">Get Started →</button>
+      </div>
+      <div class="price-card featured reveal">
+        <div class="featured-badge">Recommended</div>
+        <div class="price-tier">Enterprise</div>
+        <div class="price-name">Intelligence</div>
+        <div class="price-desc">For large enterprises and Tier 1 banks managing complex, multi-BU API estates at scale.</div>
+        <div class="price-period" style="margin-top:4px;margin-bottom:4px">Annual contract · tailored to your estate</div>
+        <div class="price-divider"></div>
+        <div class="price-features">
+          <div class="pf-item"><div class="pf-check">✓</div>Unlimited APIs &amp; business units</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Unlimited gateway integrations</div>
+          <div class="pf-item"><div class="pf-check">✓</div>AI redundancy &amp; consolidation analysis</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Cloud cost attribution (AWS, Azure, GCP)</div>
+          <div class="pf-item"><div class="pf-check">✓</div>SLA / SLO / SLI intelligence dashboards</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Full consumer &amp; dependency graph</div>
+          <div class="pf-item"><div class="pf-check">✓</div>API lifecycle governance workflows</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Executive savings &amp; ROI reporting</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Dedicated CSM + architect · 2h SLA</div>
+        </div>
+        <button class="btn btn-price-featured" onclick="openModal('Book a Demo — Intelligence')">Book a Demo →</button>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-tier">Regulated</div>
+        <div class="price-name">Sovereign</div>
+        <div class="price-desc">For central banks, regulators, G-SIBs, and institutions requiring on-premise deployment.</div>
+        <div class="price-period" style="margin-top:4px;margin-bottom:4px">On-premise or private cloud · bespoke contract</div>
+        <div class="price-divider"></div>
+        <div class="price-features">
+          <div class="pf-item"><div class="pf-check">✓</div>Everything in Intelligence</div>
+          <div class="pf-item"><div class="pf-check">✓</div>On-premise or air-gapped deployment</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Data residency &amp; sovereignty guarantee</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Custom regulatory &amp; audit reporting</div>
+          <div class="pf-item"><div class="pf-check">✓</div>DORA, FCA, PSD2, Basel IV compliance pack</div>
+          <div class="pf-item"><div class="pf-check">✓</div>Dedicated on-site support engineer</div>
+          <div class="pf-item"><div class="pf-check">✓</div>24/7 NOC · 30-min SLA</div>
+        </div>
+        <button class="btn btn-price-outline" onclick="openModal('Contact Sales — Sovereign')">Contact Sales →</button>
+      </div>
+    </div>
+    <div class="consulting-note">
+      Need a custom-built solution instead? <a href="#platform" onclick="return goToTab('consulting')">Explore our Consulting Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" id="demo">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="section-label" style="color:rgba(255,255,255,0.6); justify-content:center">Get Started</div>
+      <h2 class="headline" style="font-size:clamp(32px,4vw,56px)">Ready to see every API you own?</h2>
+      <p>Book a 45-minute live demo. We'll show you EntApiCat on a real enterprise API estate — with your own gateway data if you prefer.</p>
+      <div class="cta-actions">
+        <button class="btn btn-white btn-xl" onclick="openModal('Book a Free Demo')">Book a Free Demo →</button>
+        <button class="btn btn-outline-white btn-xl" onclick="openModal('Talk to an Architect')">Talk to an Architect</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-intro reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="headline">Common questions.</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Does EntApiCat replace my API gateway or developer portal? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">No. EntApiCat is an intelligence layer that sits above your existing operational tooling. It integrates with your gateway (Apigee, Kong, MuleSoft, AWS) and reads data from your existing portal. It does not replace or compete with either. Think of it as the business and governance layer your gateway was never designed to provide.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How long does deployment take? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Most enterprise clients have a populated, synced catalogue within 4 to 6 weeks of contract signature. Full classification and governance framework activation typically takes 10 to 12 weeks. There is no multi-year implementation — this is a SaaS product with pre-built connectors, not a custom build.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Which API gateways do you integrate with? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">We have pre-built connectors for Apigee (Google Cloud), Kong Enterprise, MuleSoft Anypoint, AWS API Gateway, Azure API Management, IBM DataPower, and Axway Amplify. Custom gateway integrations are available for the Sovereign plan. We also support OpenAPI 3.x spec import for any gateway that exports standard specs.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How does the AI redundancy analysis work? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">EntApiCat analyses API names, OpenAPI specs, traffic patterns, and functional domain tags to identify APIs with overlapping capability across business units. It clusters similar APIs, estimates the consolidation savings based on your actual cloud billing data, and generates a prioritised rationalisation roadmap — with specific consolidation recommendations per redundancy group.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Is our API metadata secure? Can we deploy on-premise? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">The Intelligence plan is hosted on ISO 27001-certified, SOC 2 Type II infrastructure with data residency in your chosen region. The Sovereign plan supports fully on-premise or private cloud deployment for regulated institutions including central banks and systemically important financial institutions. All data is encrypted at rest and in transit.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What is the difference between the Platform and Consulting offerings? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">The Platform is an out-of-the-box SaaS product — you deploy it, connect your gateways, and it works. The Consulting offering is for organisations that need a bespoke solution built on their own infrastructure, or that need strategic architecture support before committing to a platform. Many clients start with Consulting for the strategy and taxonomy, then adopt the Platform for ongoing management.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <div class="logo-cat">🐱</div>
+          Ent<span>Api</span>Cat
+        </a>
+        <p class="footer-tagline">The only enterprise API catalogue platform purpose-built for banks and large organisations. Know every API you own.</p>
+        <div style="margin-top:20px; display:flex; gap:8px">
+          <div class="f-badge">ISO 27001</div>
+          <div class="f-badge">GDPR Ready</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <div class="footer-links">
+          <a href="#platform" onclick="return goToTab('platform')">Platform Overview</a>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#compare">Comparison</a>
+          <a href="#how">How It Works</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Consulting</h4>
+        <div class="footer-links">
+          <a href="#platform" onclick="return goToTab('consulting')">Services Overview</a>
+          <a href="#platform" onclick="return goToTab('consulting')">API Estate Assessment</a>
+          <a href="#platform" onclick="return goToTab('consulting')">Taxonomy Design</a>
+          <a href="#platform" onclick="return goToTab('consulting')">Governance Framework</a>
+          <a href="#" onclick="event.preventDefault();openModal('Talk to a Specialist')">Talk to a Specialist</a>
+          <a href="#" onclick="event.preventDefault();openModal('Contact Us')">Contact Us</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="#problem">Why EntApiCat</a>
+          <a href="#" onclick="event.preventDefault();openModal('Book a Demo')">Book a Demo</a>
+          <a href="#" onclick="event.preventDefault();openModal('Contact Us')">Contact</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#" onclick="event.preventDefault();openModal('Security &amp; Compliance Enquiry')">Security &amp; Compliance</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 EntApiCat. All rights reserved. · <a href="#contact">Privacy Policy</a> · <a href="#contact">Terms of Service</a></div>
+      <div style="font-family:var(--mono); font-size:11px; color:rgba(255,255,255,0.2)">entapicat.ai</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Product tab switcher
+function switchProduct(id, el) {
+  document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.product-panel').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('panel-' + id).classList.add('active');
+}
+
+function goToTab(tab) {
+  // Switch the tab content
+  const tabs = document.querySelectorAll('.ptab');
+  const panels = document.querySelectorAll('.product-panel');
+  tabs.forEach(t => t.classList.remove('active'));
+  panels.forEach(p => p.classList.remove('active'));
+  if (tab === 'platform') {
+    tabs[0].classList.add('active');
+    document.getElementById('panel-platform').classList.add('active');
+  } else {
+    tabs[1].classList.add('active');
+    document.getElementById('panel-consulting').classList.add('active');
+  }
+  // Scroll to the section after a brief tick so the panel is visible
+  setTimeout(() => {
+    document.getElementById('platform').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 20);
+  return false;
+}
+
+// FAQ toggle
+function toggleFaq(el) {
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(f => f.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => observer.observe(el));
+
+// Smooth nav highlight
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--ink)' : '';
+  });
+}, { passive: true });
+// ── CONTACT MODAL ─────────────────────────────────────────────────────────
+// Uses Web3Forms (web3forms.com) — free, no backend needed.
+// The access key is registered to your email on Web3Forms' servers.
+// The recipient email itself is never exposed in this file.
+var W3F_KEY = '322ac40f-fb76-4389-bf0f-95d64603b20b';
+
+function openModal(title) {
+  document.getElementById('modalTitle').textContent = title || 'Book a Demo';
+  document.getElementById('modalForm').style.display = 'block';
+  document.getElementById('modalThankyou').classList.remove('visible');
+  document.getElementById('contactModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Always reset the button to its default state on open
+  var btn = document.getElementById('submitBtn');
+  btn.disabled = false;
+  btn.innerHTML = 'Send Request →';
+}
+
+function closeModal() {
+  document.getElementById('contactModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOnBg(e) {
+  if (e.target === document.getElementById('contactModal')) closeModal();
+}
+
+function submitForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const btn  = document.getElementById('submitBtn');
+
+  // Inline validation
+  const required = ['cf-fname','cf-lname','cf-email','cf-org'];
+  let valid = true;
+  required.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el.value.trim()) { el.style.borderColor = '#dc2626'; valid = false; }
+    else el.style.borderColor = '';
+  });
+  if (!valid) return;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('cf-email').value)) {
+    document.getElementById('cf-email').style.borderColor = '#dc2626';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Sending…';
+
+  const enquiryType = document.getElementById('modalTitle').textContent;
+  const firstName   = document.getElementById('cf-fname').value.trim();
+  const lastName    = document.getElementById('cf-lname').value.trim();
+
+  // Build payload for Web3Forms
+  const payload = {
+    access_key:   W3F_KEY,
+    subject:      '[EntApiCat] ' + enquiryType + ' — ' + document.getElementById('cf-org').value.trim(),
+    from_name:    firstName + ' ' + lastName,
+    email:        document.getElementById('cf-email').value.trim(),
+    message: [
+      'Name:          ' + firstName + ' ' + lastName,
+      'Email:         ' + document.getElementById('cf-email').value.trim(),
+      'Organisation:  ' + document.getElementById('cf-org').value.trim(),
+      'Role:          ' + (document.getElementById('cf-role').value || 'Not specified'),
+      'API Count:     ' + (document.getElementById('cf-apis').value || 'Not specified'),
+      '',
+      'Message:',
+      document.getElementById('cf-msg').value.trim() || '(none provided)',
+      '',
+      'Enquiry type: ' + enquiryType,
+    ].join('\n'),
+    botcheck: ''   // honeypot field — must be empty
+  };
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      document.getElementById('modalForm').style.display = 'none';
+      document.getElementById('modalThankyou').classList.add('visible');
+      form.reset();
+    } else {
+      throw new Error(data.message || 'Submission failed');
+    }
+  })
+  .catch(() => {
+    btn.disabled = false;
+    btn.innerHTML = 'Send Request →';
+    alert('Something went wrong — please try again or email us directly.');
+  });
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+</script>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal" onclick="closeModalOnBg(event)">
+  <div class="modal-box" id="modalBox">
+
+    <!-- Form view -->
+    <div id="modalForm">
+      <div class="modal-hdr">
+        <div class="modal-hdr-text">
+          <h3 id="modalTitle">Book a Demo</h3>
+          <p>We'll be in touch within one business day.</p>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal()" aria-label="Close">&#x2715;</button>
+      </div>
+      <div class="modal-body">
+        <form id="contactForm" onsubmit="submitForm(event)" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-fname">First name *</label>
+              <input type="text" id="cf-fname" name="first_name" placeholder="Jane" required>
+            </div>
+            <div class="form-field">
+              <label for="cf-lname">Last name *</label>
+              <input type="text" id="cf-lname" name="last_name" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Work email *</label>
+            <input type="email" id="cf-email" name="email" placeholder="jane.smith@bank.com" required>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-org">Organisation *</label>
+              <input type="text" id="cf-org" name="organisation" placeholder="e.g. HSBC" required>
+            </div>
+            <div class="form-field">
+              <label for="cf-role">Your role</label>
+              <select id="cf-role" name="role">
+                <option value="">Select…</option>
+                <option>Chief Architect / CTO</option>
+                <option>Enterprise Architect</option>
+                <option>Solution Architect</option>
+                <option>API Product Owner</option>
+                <option>Head of API Platform</option>
+                <option>Business / Functional Owner</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="cf-apis">Approximate number of APIs in production</label>
+            <select id="cf-apis" name="api_count">
+              <option value="">Select…</option>
+              <option>Fewer than 100</option>
+              <option>100 – 500</option>
+              <option>500 – 1,000</option>
+              <option>1,000 – 5,000</option>
+              <option>More than 5,000</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cf-msg">Message</label>
+            <textarea id="cf-msg" name="message" rows="3" placeholder="Tell us about your API estate, your key challenges, or anything you'd like us to know before the demo…"></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="submitBtn">Send Request →</button>
+          <p class="form-note">Your information is used only to respond to your enquiry. We never share or sell contact data.</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Thank you view -->
+    <div class="modal-thankyou" id="modalThankyou">
+      <div class="ty-icon">🐱</div>
+      <div class="ty-title">Thank you — we'll be in touch.</div>
+      <div class="ty-body">Your request has been received. A member of our team will contact you within one business day to arrange your demo or answer any questions.</div>
+      <button class="btn btn-primary btn-lg" onclick="closeModal()">Close</button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
